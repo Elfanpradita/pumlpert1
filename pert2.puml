@@ -1,0 +1,19 @@
+@startuml
+actor User
+
+rectangle Restoran {
+    rectangle Servent as serv
+    rectangle Chief as chief
+}
+
+usecase "Pesan Menu" as U1
+usecase "Bayar Pesanan" as U2
+usecase "Lihat Menu" as U3
+usecase "Ubah Pesanan" as U4
+
+User --> U1
+User --> U2
+User --> U3
+User --> U4
+
+@enduml
