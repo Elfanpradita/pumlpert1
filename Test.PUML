@@ -1,0 +1,16 @@
+@startuml
+class Person {
+    +String name
+    +int age
+    +void greet()
+}
+
+class Student extends Person {
+    +String studentId
+}
+
+class Teacher extends Person {
+    +String subject
+}
+
+@enduml

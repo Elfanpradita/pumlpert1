@@ -1,0 +1,35 @@
+@startuml
+
+class Mahasiswa {
+    -id
+    +Nama
+}
+
+class Matkul {
+    -id
+    +Nama
+    +Kelas
+}
+
+class Dosen {
+    -id
+    +Nama
+}
+
+class Ruang {
+    -id
+    +Nama
+    +Nds
+}
+
+class Fakultas {
+    -id
+    +Nama
+    +Nds
+}
+
+Mahasiswa -> Matkul
+Dosen -.> Matkul
+Fakultas -> Matkul
+
+@enduml

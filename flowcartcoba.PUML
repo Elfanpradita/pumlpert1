@@ -1,0 +1,37 @@
+@startuml
+!define RECTANGLE class
+!define DIAMOND class
+
+RECTANGLE StokMasuk {
+    + Catat Stok Masuk
+    + Jumlah Masuk
+}
+
+RECTANGLE StokKeluar {
+    + Catat Stok Keluar
+    + Jumlah Keluar
+}
+
+RECTANGLE PajakPembelian {
+    + Hitung Pajak Pembelian
+}
+
+RECTANGLE PajakPenjualan {
+    + Hitung Pajak Penjualan
+}
+
+RECTANGLE DaftarSupplier {
+    + Tambah Supplier
+}
+
+RECTANGLE DaftarPembeli {
+    + Tambah Pembeli
+}
+
+// Flowchart connections
+StokMasuk -> DaftarSupplier : Menerima dari
+StokMasuk -> PajakPembelian : Dikenakan
+StokKeluar -> DaftarPembeli : Menjual kepada
+StokKeluar -> PajakPenjualan : Dikenakan
+
+@enduml

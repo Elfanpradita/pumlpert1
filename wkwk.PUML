@@ -1,0 +1,64 @@
+@startuml
+
+class StokBarang {
+    - id: int
+    + nama: String
+    + stok: int
+    + tambahStok(quantity: int): void
+    + kurangiStok(quantity: int): void
+}
+
+class StokKeluar {
+    - id: int
+    + nama: String
+    + waktuKeluar: Date
+    + jumlahKeluar: int
+    + catatKeluar(): void
+}
+
+class StokMasuk {
+    - id: int
+    + nama: String
+    + waktuMasuk: Date
+    + jumlahMasuk: int
+    + catatMasuk(): void
+}
+
+class PajakPembelian {
+    - id: int
+    + nama: String
+    + persentase: double
+    + hitungPajak(jumlah: double): double
+}
+
+class PajakPenjualan {
+    - id: int
+    + nama: String
+    + persentase: double
+    + hitungPajak(jumlah: double): double
+}
+
+class DaftarSupplier {
+    - id: int
+    + nama: String
+    + alamat: String
+    + nomorTelepon: String
+    + tambahSupplier(): void
+}
+
+class DaftarPembeli {
+    - id: int
+    + nama: String
+    + alamat: String
+    + nomorTelepon: String
+    + tambahPembeli(): void
+}
+
+StokKeluar --> StokBarang : mengeluarkan >
+StokMasuk --> StokBarang : menambah >
+StokMasuk --> PajakPembelian : dikenakan >
+StokKeluar --> PajakPenjualan : dikenakan >
+DaftarSupplier --> StokMasuk : menyuplai >
+DaftarPembeli --> StokKeluar : membeli >
+
+@enduml

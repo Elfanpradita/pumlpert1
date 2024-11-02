@@ -1,0 +1,48 @@
+@startuml
+
+class StokBarang {
+    -id
+    +Nama
+}
+
+class StokKeluar {
+    -id
+    +Nama
+    +Waktu keluar
+}
+
+class StokMasuk {
+    -id
+    +Nama
+    +Waktu Masuk
+}
+
+class PajakPembelian {
+    -id
+    +Nama
+}
+
+class PajakPenjualan {
+    -id
+    +Nama
+}
+
+class DaftarSupplier {
+    -id
+    +Nama
+}
+
+class DaftarPembeli {
+    -id
+    +Nama
+}
+
+StokKeluar -> StokBarang
+StokMasuk -> StokBarang
+StokMasuk -> PajakPembelian
+StokKeluar -> PajakPenjualan
+DaftarSupplier -> StokMasuk
+DaftarPembeli -> StokKeluar
+
+
+@enduml
